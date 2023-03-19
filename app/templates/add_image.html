@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <meta charset="utf-8">
+  <title>ページタイトル</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add_image.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h2>ペットの画像を追加する</h2>
+    <form method="POST" enctype="multipart/form-data" action="{{ url_for('add_image', pet_id=pet_id) }}">
+        <div class="form-group">
+            <label for="image">画像をアップロードしてください</label>
+            <input type="file" class="form-control-file" id="image" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">アップロードする</button>
+    </form>
+{% endblock %}

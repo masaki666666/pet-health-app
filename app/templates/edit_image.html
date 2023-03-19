@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>ペットの画像を編集する</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <label for="pet_image">画像ファイル</label>
+            <input type="file" id="pet_image" name="pet_image" class="form-control-file">
+        </div>
+        <input type="submit" value="保存する" class="btn btn-primary">
+    </form>
+{% endblock %}

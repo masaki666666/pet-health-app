@@ -1,0 +1,9 @@
+CREATE TABLE pet_info (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(255) NOT NULL,
+    birthday DATE NOT NULL,
+    weight FLOAT NOT NULL,
+    sex VARCHAR(255) NOT NULL,
+    breed VARCHAR(255) NOT NULL
+);

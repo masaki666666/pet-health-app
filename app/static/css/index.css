@@ -1,0 +1,105 @@
+/* ページ全体のスタイル */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+/* ヘッダーのスタイル */
+header {
+  background-color: #005b9f;
+  color: white;
+  padding: 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: normal;
+}
+
+/* メインコンテンツのスタイル */
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: white;
+  padding: 20px;
+}
+
+main h2 {
+  margin-top: 0;
+}
+
+/* ペット情報テーブルのスタイル */
+table.pet-info {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+table.pet-info th,
+table.pet-info td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+table.pet-info th {
+  background-color: #eee;
+}
+
+table.pet-info th:first-child,
+table.pet-info td:first-child {
+  width: 30%;
+}
+
+/* ボタンのスタイル */
+button {
+  padding: 10px 20px;
+  background-color: #005b9f;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004477;
+}
+
+/* フォームのスタイル */
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+  background-color: #005b9f;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #004477;
+}
+
+/* エラーメッセージのスタイル */
+.error {
+  color: red;
+  margin-bottom: 10px;
+}

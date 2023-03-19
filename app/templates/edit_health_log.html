@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>健康情報を編集する</h2>
+    <form method="POST">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.weight.label }}
+            {{ form.weight(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.activity_level.label }}
+            {{ form.activity_level(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.appetite_level.label }}
+            {{ form.appetite_level(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.coat_condition.label }}
+            {{ form.coat_condition(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.urination.label }}
+            {{ form.urination(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.defecation.label }}
+            {{ form.defecation(class="form-control") }}
+        </div>
+        <input type="submit" value="保存する" class="btn btn-primary">
+    </form>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <meta charset="utf-8">
+  <title>ページタイトル</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add_health_log.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h2>健康情報の追加</h2>
+    <form method="POST" action="{{ url_for('add_health_log') }}">
+        <div class="form-group">
+            <label for="weight">体重 (kg)</label>
+            <input type="number" step="0.01" class="form-control" id="weight" name="weight" required>
+        </div>
+        <div class="form-group">
+            <label for="activity_level">活動量</label>
+            <select class="form-control" id="activity_level" name="activity_level">
+                <option value="低">低</option>
+                <option value="中">中</option>
+                <option value="高">高</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="appetite_level">食欲</label>
+            <select class="form-control" id="appetite_level" name="appetite_level">
+                <option value="低">低</option>
+                <option value="中">中</option>
+                <option value="高">高</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="coat_condition">毛艶</label>
+            <select class="form-control" id="coat_condition" name="coat_condition">
+                <option value="悪い">悪い</option>
+                <option value="普通">普通</option>
+                <option value="良い">良い</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="urination">排泄 (回数/日)</label>
+            <input type="number" class="form-control" id="urination" name="urination" required>
+        </div>
+        <div class="form-group">
+            <label for="defecation">排便 (回数/日)</label>
+            <input type="number" class="form-control" id="defecation" name="defecation" required>
+        </div>
+        <button type="submit" class="btn btn-primary">追加</button>
+    </form>
+{% endblock %}

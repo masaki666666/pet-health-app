@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ pet.name }}の基本情報</h2>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>名前</td>
+                <td>{{ pet.name }}</td>
+            </tr>
+            <tr>
+                <td>種類</td>
+                <td>{{ pet.species }}</td>
+            </tr>
+            <tr>
+                <td>生年月日</td>
+                <td>{{ pet.birth_date|date }}</td>
+            </tr>
+            <tr>
+                <td>体重</td>
+                <td>{{ pet.weight }} kg</td>
+            </tr>
+            <tr>
+                <td>性別</td>
+                <td>{{ pet.gender }}</td>
+            </tr>
+            <tr>
+                <td>特徴</td>
+                <td>{{ pet.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{{ url_for('add_health_log', pet_id=pet.id) }}" class="btn btn-primary">健康情報を追加する</a>
+    <a href="{{ url_for('add_image', pet_id=pet.id) }}" class="btn btn-primary">画像を追加する</a>
+{% endblock %}

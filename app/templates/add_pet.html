@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <meta charset="utf-8">
+  <title>ページタイトル</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/add_pet.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h2>ペットを追加する</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="name">名前</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="species">種類</label>
+            <input type="text" class="form-control" id="species" name="species" required>
+        </div>
+        <div class="form-group">
+            <label for="birth_date">生年月日</label>
+            <input type="date" class="form-control" id="birth_date" name="birth_date" required>
+        </div>
+        <div class="form-group">
+            <label for="breed">品種</label>
+            <input type="text" class="form-control" id="breed" name="breed">
+        </div>
+        <div class="form-group">
+            <label for="gender">性別</label>
+            <select class="form-control" id="gender" name="gender" required>
+                <option value="male">オス</option>
+                <option value="female">メス</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="weight">体重（kg）</label>
+            <input type="number" class="form-control" id="weight" name="weight" step="0.01" min="0">
+        </div>
+        <div class="form-group">
+            <label for="image">画像</label>
+            <input type="file" class="form-control-file" id="image" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">追加</button>
+    </form>
+{% endblock %}
