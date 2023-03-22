@@ -1,0 +1,35 @@
+/* フォームのスタイル */
+.form-control {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../img/select-arrow.png");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+}
+
+.form-group input[type=file] {
+    margin-top: 10px;
+}
+
+/* 送信ボタン */
+.btn-submit {
+    background-color: #18BC9C;
+    border-color: #18BC9C;
+    color: #fff;
+}
+
+.btn-submit:hover {
+    background-color: #12856E;
+    border-color: #12856E;
+    color: #fff;
+}

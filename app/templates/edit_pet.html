@@ -1,33 +1,33 @@
 {% extends 'base.html' %}
 
+{% block head %}
+  <meta charset="utf-8">
+  <title>ページタイトル</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit_pet.css') }}">
+{% endblock %}
+
 {% block content %}
-    <h2>{{ pet.name }}の情報を編集する</h2>
-    <form method="POST">
-        {{ form.csrf_token }}
+    <h2>ペット情報の編集</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
         <div class="form-group">
-            {{ form.name.label }}
-            {{ form.name(class="form-control") }}
+            {{ form.name.label }} {{ form.name(size=20) }}
         </div>
         <div class="form-group">
-            {{ form.species.label }}
-            {{ form.species(class="form-control") }}
+            {{ form.species.label }} {{ form.species(size=20) }}
         </div>
         <div class="form-group">
-            {{ form.birth_date.label }}
-            {{ form.birth_date(class="form-control") }}
+            {{ form.birthday.label }} {{ form.birthday }}
         </div>
         <div class="form-group">
-            {{ form.weight.label }}
-            {{ form.weight(class="form-control") }}
+            {{ form.weight.label }} {{ form.weight }}
         </div>
         <div class="form-group">
-            {{ form.gender.label }}
-            {{ form.gender(class="form-control") }}
+            {{ form.sex.label }} {{ form.sex }}
         </div>
         <div class="form-group">
-            {{ form.description.label }}
-            {{ form.description(class="form-control") }}
+            {{ form.image.label }} {{ form.image }}
         </div>
-        <input type="submit" value="保存する" class="btn btn-primary">
+        <input type="submit" value="保存" class="btn btn-primary">
     </form>
 {% endblock %}

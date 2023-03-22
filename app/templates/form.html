@@ -1,37 +1,61 @@
 {% extends 'base.html' %}
 
-{% block title %}Pet Health Info{% endblock %}
+{% block head %}
+  <meta charset="utf-8">
+  <title>ページタイトル</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}">
+{% endblock %}
 
 {% block content %}
-    <h1>Pet Health Info</h1>
-
-    <form method="POST">
+    <h2>ペットの健康情報の追加</h2>
+    <form method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="weight">Weight (kg)</label>
-            <input type="text" name="weight" id="weight" class="form-control" required>
+            <label for="pet_name">ペットの名前</label>
+            <input type="text" class="form-control" id="pet_name" name="pet_name" required>
         </div>
-
         <div class="form-group">
-            <label for="activity_level">Activity Level (min/day)</label>
-            <input type="text" name="activity_level" id="activity_level" class="form-control" required>
+            <label for="pet_type">ペットの種類</label>
+            <input type="text" class="form-control" id="pet_type" name="pet_type" required>
         </div>
-
         <div class="form-group">
-            <label for="appetite_level">Appetite Level (0-5)</label>
-            <input type="text" name="appetite_level" id="appetite_level" class="form-control" required>
+            <label for="pet_birthday">ペットの生年月日</label>
+            <input type="date" class="form-control" id="pet_birthday" name="pet_birthday" required>
         </div>
-
         <div class="form-group">
-            <label for="coat_quality">Coat Quality</label>
-            <select name="coat_quality" id="coat_quality" class="form-control" required>
-                <option value="">-- Select --</option>
-                <option value="1">Poor</option>
-                <option value="2">Fair</option>
-                <option value="3">Good</option>
-                <option value="4">Very good</option>
-                <option value="5">Excellent</option>
+            <label for="pet_weight">ペットの体重</label>
+            <input type="number" class="form-control" id="pet_weight" name="pet_weight" step="0.1" required>
+        </div>
+        <div class="form-group">
+            <label for="pet_activity_level">ペットの活動量</label>
+            <select class="form-control" id="pet_activity_level" name="pet_activity_level" required>
+                <option value="">選択してください</option>
+                <option value="low">低</option>
+                <option value="medium">中</option>
+                <option value="high">高</option>
             </select>
         </div>
-
         <div class="form-group">
-            <label for="feces_quality">Feces Quality (0-5)</label>
+            <label for="pet_appetite_level">ペットの食欲</label>
+            <select class="form-control" id="pet_appetite_level" name="pet_appetite_level" required>
+                <option value="">選択してください</option>
+                <option value="low">低</option>
+                <option value="medium">中</option>
+                <option value="high">高</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="pet_fur_quality">ペットの毛艶</label>
+            <select class="form-control" id="pet_fur_quality" name="pet_fur_quality" required>
+                <option value="">選択してください</option>
+                <option value="low">低</option>
+                <option value="medium">中</option>
+                <option value="high">高</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="pet_image">ペットの画像</label>
+            <input type="file" class="form-control-file" id="pet_image" name="pet_image">
+        </div>
+        <button type="submit" class="btn btn-primary">追加</button>
+    </form>
+{% endblock %}

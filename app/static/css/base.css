@@ -1,0 +1,85 @@
+/* 共通のスタイル */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #23527c;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-weight: normal;
+  }
+  
+  /* ナビゲーションバー */
+  .navbar {
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+  }
+  
+  .navbar-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+  }
+  
+  /* コンテンツ */
+  .container {
+    margin-top: 30px;
+  }
+  
+  .page-header {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+  }
+  
+  /* ボタン */
+  .btn {
+    border-radius: 0;
+  }
+  
+  .btn-primary {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+  }
+  
+  .btn-primary:hover {
+    background-color: #286090;
+    border-color: #204d74;
+  }
+  
+  .btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c9302c;
+    border-color: #ac2925;
+  }
+  
+  /* エラーメッセージ */
+  .alert {
+    margin-top: 30px;
+  }
+  
+  .alert-danger {
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+  }  

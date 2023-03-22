@@ -1,0 +1,38 @@
+/* 編集ページ全体 */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* フォーム要素 */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* タイトル */
+label[for="image_title"] {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+#image_title {
+    width: 100%;
+}
+
+/* ファイル */
+label[for="image_file"] {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+#image_file {
+    width: 100%;
+    margin-top: .5rem;
+}
+
+/* 送信ボタン */
+button[type="submit"] {
+    display: block;
+    margin-top: 1rem;
+}

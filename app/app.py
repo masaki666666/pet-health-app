@@ -1,11 +1,15 @@
-from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask_sqlalchemy import SQLAlchemy
+from models import db, Pet, HealthLog, EventLog, PetImage
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://username:password@localhost/pet_health'
-db = SQLAlchemy(app)
+app.config['SECRET_KEY'] = 'your_secret_key_here'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'your_database_uri_here'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
 
 
 class PetInfo(db.Model):
@@ -66,7 +70,7 @@ def pet_images(pet_id):
     return render_template('pet_images.html', pet_images=pet_images)
 
 
-# ペットの詳細を表示する
+# ペットの詳細情報を表示する
 @app.route('/pet_info/<int:pet_id>')
 def pet_info(pet_id):
     pet = PetInfo.query.get_or_404(pet_id)
@@ -87,11 +91,9 @@ def add_health_log():
         coat_condition = request.form['coat_condition']
         stool_condition = request.form['stool_condition']
         urine_condition = request.form['urine_condition']
-        
         new_log = HealthLog(pet_id=pet_id, record_date=record_date, weight=weight, activity_level=activity_level,
-                            appetite_level=appetite_level, coat_condition=coat_condition, stool_condition=stool_condition,
-                            urine_condition=urine_condition)
-
+        appetite_level=appetite_level, coat_condition=coat_condition, stool_condition=stool_condition,
+        urine_condition=urine_condition)
         try:
             db.session.add(new_log)
             db.session.commit()
@@ -101,9 +103,9 @@ def add_health_log():
             db.session.rollback()
             flash('健康情報の追加に失敗しました。')
             return redirect(url_for('add_health_log', pet_id=pet_id))
-
     pet_id = request.args.get('pet_id')
     pet = PetInfo.query.get_or_404(pet_id)
     return render_template('add_health_log.html', pet=pet)
 
-
+if __name__ == '__main__':
+    app.run(debug=True)

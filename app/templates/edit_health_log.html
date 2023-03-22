@@ -1,33 +1,41 @@
 {% extends 'base.html' %}
 
+{% block head %}
+  <meta charset="utf-8">
+  <title>ページタイトル</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit_health_log.css') }}">
+{% endblock %}
+
 {% block content %}
     <h2>健康情報を編集する</h2>
-    <form method="POST">
+    <form method="POST" action="{{ url_for('edit_health_log', id=health_log.id) }}">
         {{ form.csrf_token }}
         <div class="form-group">
-            {{ form.weight.label }}
-            {{ form.weight(class="form-control") }}
+            <label for="weight">体重（kg）</label>
+            {{ form.weight(class="form-control", placeholder="体重を入力してください") }}
         </div>
         <div class="form-group">
-            {{ form.activity_level.label }}
-            {{ form.activity_level(class="form-control") }}
+            <label for="activity_level">活動量</label>
+            {{ form.activity_level(class="form-control", placeholder="活動量を入力してください") }}
         </div>
         <div class="form-group">
-            {{ form.appetite_level.label }}
-            {{ form.appetite_level(class="form-control") }}
+            <label for="appetite_level">食欲</label>
+            {{ form.appetite_level(class="form-control", placeholder="食欲を入力してください") }}
         </div>
         <div class="form-group">
-            {{ form.coat_condition.label }}
-            {{ form.coat_condition(class="form-control") }}
+            <label for="coat_health">毛艶</label>
+            {{ form.coat_health(class="form-control", placeholder="毛艶を入力してください") }}
         </div>
         <div class="form-group">
-            {{ form.urination.label }}
-            {{ form.urination(class="form-control") }}
+            <label for="urination">尿の状態</label>
+            {{ form.urination(class="form-control", placeholder="尿の状態を入力してください") }}
         </div>
         <div class="form-group">
-            {{ form.defecation.label }}
-            {{ form.defecation(class="form-control") }}
+            <label for="defecation">便の状態</label>
+            {{ form.defecation(class="form-control", placeholder="便の状態を入力してください") }}
         </div>
-        <input type="submit" value="保存する" class="btn btn-primary">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">更新する</button>
+        </div>
     </form>
 {% endblock %}

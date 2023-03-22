@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
 
+{% block head %}
+  <meta charset="utf-8">
+  <title>ページタイトル</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit_image.css') }}">
+{% endblock %}
+
 {% block content %}
-    <h2>ペットの画像を編集する</h2>
-    <form method="POST" enctype="multipart/form-data">
-        {{ form.csrf_token }}
+    <h2>画像を編集する</h2>
+    <form method="POST" action="{{ url_for('edit_image', id=image.id) }}" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="pet_image">画像ファイル</label>
-            <input type="file" id="pet_image" name="pet_image" class="form-control-file">
+            <label for="image_title">タイトル</label>
+            <input type="text" class="form-control" id="image_title" name="title" value="{{ image.title }}" required>
         </div>
-        <input type="submit" value="保存する" class="btn btn-primary">
+        <div class="form-group">
+            <label for="image_file">ファイル</label>
+            <input type="file" class="form-control-file" id="image_file" name="file">
+        </div>
+        <button type="submit" class="btn btn-primary">編集する</button>
     </form>
 {% endblock %}

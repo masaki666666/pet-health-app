@@ -1,105 +1,95 @@
-/* ページ全体のスタイル */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
 }
 
-/* ヘッダーのスタイル */
 header {
-  background-color: #005b9f;
-  color: white;
+  background-color: #FFB6C1;
   padding: 10px;
+  color: #FFF;
+  text-align: center;
+  font-size: 28px;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2em;
-  font-weight: normal;
-}
-
-/* メインコンテンツのスタイル */
-main {
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: white;
-  padding: 20px;
-}
-
-main h2 {
-  margin-top: 0;
-}
-
-/* ペット情報テーブルのスタイル */
-table.pet-info {
-  border-collapse: collapse;
-  width: 100%;
+nav {
+  background-color: #FFF;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
 
-table.pet-info th,
-table.pet-info td {
-  border: 1px solid #ccc;
-  padding: 10px;
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-table.pet-info th {
-  background-color: #eee;
+nav li {
+  float: left;
 }
 
-table.pet-info th:first-child,
-table.pet-info td:first-child {
-  width: 30%;
-}
-
-/* ボタンのスタイル */
-button {
-  padding: 10px 20px;
-  background-color: #005b9f;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #004477;
-}
-
-/* フォームのスタイル */
-form label {
+nav li a {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+  color: #4a4a4a;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-form input[type="text"],
-form input[type="number"],
-form select {
+nav li a:hover {
+  background-color: #FFB6C1;
+  color: #FFF;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #FFB6C1;
+  color: #FFF;
+  padding: 8px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #FF69B4;
+}
+
+.error-message {
+  color: #FF0000;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: #008000;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
   width: 100%;
-  padding: 10px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  margin-bottom: 10px;
 }
 
-form input[type="submit"] {
-  background-color: #005b9f;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  padding: 10px 20px;
-  cursor: pointer;
+th, td {
+  text-align: left;
+  padding: 8px;
 }
 
-form input[type="submit"]:hover {
-  background-color: #004477;
+th {
+  background-color: #FFB6C1;
+  color: #FFF;
 }
 
-/* エラーメッセージのスタイル */
-.error {
-  color: red;
-  margin-bottom: 10px;
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }

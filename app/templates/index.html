@@ -10,17 +10,4 @@
     <h2>ペットの健康管理アプリ</h2>
     <p>ペットの健康情報を記録しましょう。</p>
     <p><a href="{{ url_for('add_pet') }}" class="btn btn-primary">ペットを追加する</a></p>
-    <div class="card-columns">
-        {% for pet in pets %}
-        <div class="card">
-            <img src="{{ url_for('get_pet_image', pet_id=pet.id) }}" class="card-img-top" alt="{{ pet.name }}">
-            <div class="card-body">
-                <h5 class="card-title">{{ pet.name }}</h5>
-                <p class="card-text">{{ pet.breed }} {{ pet.age }}歳</p>
-                <a href="{{ url_for('pet_info', pet_id=pet.id) }}" class="btn btn-primary">ペット情報</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
 {% endblock %}
-

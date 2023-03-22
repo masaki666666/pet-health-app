@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
+{% block head %}
+  <meta charset="utf-8">
+  <title>ページタイトル</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pet_info.css') }}">
+{% endblock %}
+
 {% block content %}
     <h2>{{ pet.name }}の基本情報</h2>
     <table class="table">
